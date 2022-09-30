@@ -10,6 +10,8 @@ func main() {
 
 ## Variables and Mutability
 
+### Immutability by default
+
 ```rust
 func main() {
     x: num = 5;
@@ -19,7 +21,7 @@ func main() {
 }
 ```
 
-## Mutable variables
+### Mutable variables
 
 ```rust
 func main() {
@@ -34,48 +36,30 @@ func main() {
 
 ```rust
 func main() {
-    a: num = 5;  // defaults to signed num32
-    b: unsigned num8 = 5;
-    c: unsigned num16 = 5;
-    d: unsigned num32 = 5;
-    e: unsigned num64 = 5;
-    f: unsigned num128 = 5;
-    g: signed num = -5;
-    h: signed num8 = -5;
-    i: signed num16 = -5;
-    j: signed num32 = -5;
-    k: signed num64 = -5;
-    l: signed num128 = -5;
-
-    // If data ends up exceeding the limits of it's
-    // data type, an OverflowError will be raised
-
-    s: float = 5.0;  // defaults to 64 bit float
-    t: float32 = 5.0; // 32 bit float
-
-    y: bool = true;
-    z: str = "Hello, world!";
+    a: num = 5;
+    b: float = 5.0; 
+    c: bool = true;
+    d: str = "Hello, world!";
 }
 ```
 
-## Numeric Operations
+### Numeric operations
 
 ```rust
 func main() {
-    // Arithmetic
     a: num = 5 + 5;  // addition
     b: num = 5 - 5;  // subtraction
     c: num = 5 * 5;  // multiplication
     d: num = 5 / 5;  // division
     e: num = 5 % 5;  // modulus
-    f: num = 5 ** 5; // exponentiation
+}
+```
 
-    // Bitwise
-    g: num = 5 & 5;  // bitwise AND
-    h: num = 5 | 5;  // bitwise OR
-    i: num = 5 ^ 5;  // bitwise XOR
-    j: num = ~5;     // bitwise NOT
-    j: num = 5 << 5; // left shift
-    k: num = 5 >> 5; // right shift
+## Compound types
 
+```rust
+func main() {
+    a: (num, num, str) = (3, 6, "Lithium");
+    b: [5: num * 3];  // [5, 5, 5]
+    c: mut [num] = [1, 2, 3, 4]
 }
